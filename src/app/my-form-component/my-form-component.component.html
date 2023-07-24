@@ -17,9 +17,9 @@
       <label for="name">Class:</label>
 
       <input
-        type="text"
-        id="name"
-        name="name"
+        type="number"
+        id="class"
+        name="class"
         formControlName="class"
         class="form-control"
       />
@@ -28,9 +28,9 @@
       <label for="name">Roll:</label>
 
       <input
-        type="text"
-        id="name"
-        name="name"
+        type="number"
+        id="roll"
+        name="roll"
         formControlName="roll"
         class="form-control"
       />
@@ -40,8 +40,8 @@
 
       <input
         type="mail"
-        id="name"
-        name="name"
+        id="email"
+        name="email"
         formControlName="email"
         class="form-control"
       />
@@ -69,7 +69,11 @@
         <td>
           Subjects Name :
 
-          <input type="text" formControlName="subName" class="form-control" />
+          <input
+            type="text"
+            formControlName="subName"
+            class="form-control mt-3"
+          />
         </td>
 
         <td>
@@ -78,19 +82,20 @@
           <input
             type="number"
             formControlName="subMarks"
-            class="form-control"
+            class="form-control mt-3"
+            mt-3
           />
         </td>
 
         <td>
-          <button (click)="removeSubject(i)" class="btn btn-danger btn-sm">
+          <button (click)="removeSubject(i)" class="btn btn-danger btn-sm mt-3">
             Remove
           </button>
         </td>
       </tr>
     </table>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success mx-3">Submit</button>
   </form>
 
   <br />
