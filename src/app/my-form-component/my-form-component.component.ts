@@ -13,39 +13,40 @@ import {
   styleUrls: ['./my-form-component.component.css'],
 })
 export class MyFormComponentComponent {
-  name = 'Angular';
-
-  productForm: FormGroup;
+  simpleForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.productForm = this.fb.group({
+    this.simpleForm = this.fb.group({
       name: '',
+      class: '',
+      roll: '',
+      email: '',
 
-      quantities: this.fb.array([]),
+      subjects: this.fb.array([]),
     });
   }
 
-  quantities(): FormArray {
-    return this.productForm.get('quantities') as FormArray;
+  subjects(): FormArray {
+    return this.simpleForm.get('subjects') as FormArray;
   }
 
-  newQuantity(): FormGroup {
+  newSubjects(): FormGroup {
     return this.fb.group({
-      qty: '',
+      subName: '',
 
-      price: '',
+      subMarks: '',
     });
   }
 
-  addQuantity() {
-    this.quantities().push(this.newQuantity());
+  addSubjects() {
+    this.subjects().push(this.newSubjects());
   }
 
-  removeQuantity(i: number) {
-    this.quantities().removeAt(i);
+  removeSubject(i: number) {
+    this.subjects().removeAt(i);
   }
 
   onSubmit() {
-    console.log(this.productForm.value);
+    console.log(this.simpleForm.value);
   }
 }

@@ -8,11 +8,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { HelloComponent } from './my-form-component/hello/hello.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AppComponent, MyFormComponentComponent, HelloComponent],
+  declarations: [AppComponent, MyFormComponentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
