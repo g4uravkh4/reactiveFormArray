@@ -49,16 +49,32 @@
 
     <table class="table table-bordered" formArrayName="subjects">
       <tr>
-        <th colspan="2">Add More Subjects:</th>
+        <th colspan="2">Add Subjects:</th>
 
         <th width="150px">
-          <button
+          <div>
+            <button
+              type="button"
+              (click)="addSubjects()"
+              class="btn btn-sm btn-primary"
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary mx-3"
+              (click)="onDeleteAll()"
+            >
+              Delete
+            </button>
+            <!-- <button
             type="button"
-            (click)="addSubjects()"
-            class="btn btn-sm btn-primary"
+            class="btn btn-sm btn-primary mx-3"
+            (click)="onReset()"
           >
-            Add
-          </button>
+            Reset
+          </button> -->
+          </div>
         </th>
       </tr>
 
@@ -67,7 +83,7 @@
         [formGroupName]="i"
       >
         <td>
-          Subjects Name :
+          Subject Name :
 
           <input
             type="text"
@@ -77,7 +93,7 @@
         </td>
 
         <td>
-          Expected Marks:
+          Credit Hours:
 
           <input
             type="number"
@@ -88,14 +104,25 @@
         </td>
 
         <td>
-          <button (click)="removeSubject(i)" class="btn btn-danger btn-sm mt-3">
-            Remove
-          </button>
+          <div>
+            <button
+              (click)="removeSubject(i)"
+              class="btn btn-danger btn-sm mt-3"
+            >
+              Remove
+            </button>
+          </div>
         </td>
       </tr>
     </table>
 
-    <button type="submit" class="btn btn-success mx-3">Submit</button>
+    <button
+      type="submit"
+      [disabled]="simpleForm.invalid"
+      class="btn btn-success mx-3"
+    >
+      Submit
+    </button>
   </form>
 
   <br />
